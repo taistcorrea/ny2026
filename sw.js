@@ -1,4 +1,4 @@
-const CACHE = "ny26-v2";
+const CACHE = "ny26-v3";
 const ASSETS = [
  "./",
  "index.html",
@@ -11,6 +11,7 @@ const ASSETS = [
  "apple-touch-icon.png",
  "icon-192.png",
  "icon-512.png",
+ "amdream.webp",
  "amnh.webp",
  "apple.webp",
  "barclays.webp",
@@ -29,6 +30,7 @@ const ASSETS = [
  "flatiron.webp",
  "friends.webp",
  "grandcentral.webp",
+ "harriet.webp",
  "highline.webp",
  "hudsonpark.webp",
  "jfk.webp",
@@ -45,6 +47,7 @@ const ASSETS = [
  "stpatrick.webp",
  "timeout.webp",
  "timessq.webp",
+ "traderjoes.webp",
  "tram.webp",
  "unionsq.webp",
  "uws.webp",

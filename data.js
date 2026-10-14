@@ -36,7 +36,8 @@ window.TRIP = {
       ],
       tips: [
         ["Banheiro", "O banheiro público do Bryant Park é um dos mais limpos da cidade."],
-        ["Winter Village", "A pista de patinação e as lojinhas de Natal só abrem a partir de 28/10, depois da viagem de vocês."]
+        ["Winter Village", "A pista de patinação e as lojinhas de Natal só abrem a partir de 28/10, depois da viagem de vocês."],
+        ["Rose Main Reading Room", "A sala de leitura da biblioteca é grátis. Entrem pela 5ª Av e subam ao 3º andar."]
       ],
       around: [
         ["Biblioteca Pública", "476 5th Ave, colada no parque."],
@@ -93,7 +94,8 @@ window.TRIP = {
         ["Bolsa de Nova York", "Na Wall St com a Broad St, 5 min a pé; a fachada com a bandeira gigante."],
         ["Federal Hall", "A estátua de George Washington na escadaria, em frente à Bolsa."]
       ],
-      tips: [["Golpe no Battery Park", "Ali perto, gente aborda oferecendo ingresso de ferry ou dizendo que o de vocês 'está errado'. Ignorem: o ferry de vocês é o de Staten Island, que é grátis."]],
+      tips: [["Menos movimento", "Antes das 9h a fila pra foto com o touro é curta; depois das 10h vira multidão."],
+        ["Golpe no Battery Park", "Ali perto, gente aborda oferecendo ingresso de ferry ou dizendo que o de vocês 'está errado'. Ignorem: o ferry de vocês é o de Staten Island, que é grátis."]],
       around: [
         ["Stone Street", "4 min a pé: ruazinha de pedra com bares."],
         ["Battery Park", "Do outro lado da rua, à beira d'água."]
@@ -107,6 +109,7 @@ window.TRIP = {
       ],
       tips: [
         ["De graça", "Não tem ingresso. Quem vender ingresso de ferry na rua é golpe."],
+        ["Frio no deck", "Sábado com sol, mas uns 11 °C e vento no rio: levem casaco."],
         ["Lado da Estátua", "Direita na ida. Na volta, confiram na hora: como a balsa só vai e volta, a Estátua deve aparecer do mesmo lado do barco."],
         ["Desembarque", "Em Staten Island todo mundo desce. É só seguir as placas e pegar a próxima balsa de volta, que sai em poucos minutos."]
       ],
@@ -184,33 +187,36 @@ window.TRIP = {
       around: [["Time Out Market", "15 min a pé de volta pra Dumbo."]] },
 
     timeout: { name: "Time Out Market", addr: "Empire Stores, 55 Water St", lat: 40.7034, lon: -73.9905, img: "timeout",
-      summary: "Praça de alimentação com vários restaurantes num armazém antigo. Almoço do dia 3.",
-      see: [["Terraço do 5º andar", "Subam no terraço: vista das pontes e de Manhattan, de graça."]],
+      summary: "Praça de alimentação num armazém antigo, com o rooftop grátis que quase ninguém conhece (o do teu salvo). Almoço do dia 3.",
+      see: [["Rooftop grátis", "Subam até o 5º andar do Empire Stores: terraço público com vista das pontes e de Manhattan, de graça."]],
       tips: [["Água", "Bebedouros e água da torneira são grátis."]],
       around: [["Brooklyn Bridge (entrada)", "15 min a pé até a Cadman Plaza."]] },
 
-    bbridge: { name: "Brooklyn Bridge a pé", addr: "Entrada na Cadman Plaza East com a Tillary St", lat: 40.6996, lon: -73.9895, img: "bbridge",
-      summary: "Atravessar a ponte a pé, do Brooklyn pra Manhattan, com o skyline crescendo na frente. Uns 40 min com paradas.",
+    bbridge: { name: "Brooklyn Bridge a pé", addr: "Entrada em Manhattan: Park Row, em frente ao City Hall", lat: 40.7121, lon: -74.0047, img: "bbridge",
+      summary: "Atravessar a ponte a pé, de Manhattan pro Brooklyn, logo cedo, antes da multidão. Uns 40 min com paradas; a saída cai em Dumbo.",
       see: [
         ["As torres de pedra", "Os arcos góticos no meio da ponte; a foto clássica."],
-        ["O skyline", "Indo nesse sentido, Manhattan fica sempre de frente."]
+        ["O skyline", "Nesse sentido, Manhattan fica atrás: parem e virem pra trás nas torres pra foto."]
       ],
       tips: [
+        ["Menos movimento", "Antes das 9h a ponte é tranquila; domingo à tarde é o horário mais cheio da semana."],
         ["Ciclovia", "Fiquem do lado dos pedestres; a faixa das bicicletas é sinalizada e os ciclistas vêm rápido."],
         ["Poses", "Pra foto sentada na viga lateral, procurem os trechos mais largos perto das torres."]
       ],
-      around: [["City Hall", "Saída da ponte em Manhattan; a estação City Hall (R) fica a 3 min."]] },
+      around: [["Dumbo", "A saída da ponte no Brooklyn leva direto a Dumbo (5 min)."]] },
 
     amnh: { name: "Museu de História Natural", addr: "200 Central Park West, na 79th", lat: 40.7813, lon: -73.9740, img: "amnh", ticket: "amnh",
-      summary: "O museu de Uma Noite no Museu: dinossauros, a baleia azul e o planetário. Entrada às 10h; contem com umas 3 horas.",
+      summary: "O museu de Uma Noite no Museu: dinossauros, a baleia azul e o planetário. Plano: a entrada grátis da última hora (16h30–17h30), informada por sites de viagem. Cheguem às 16h.",
       see: [
         ["Dinossauros (4º andar)", "O T. rex e o titanossauro, que quase não cabe na sala."],
         ["A baleia azul", "Sala da Vida Oceânica, 1º andar."],
         ["Gilder Center", "A ala nova, com arquitetura de caverna e o insetário."]
       ],
       tips: [
-        ["Ingresso", "Comprem online antes; o 'pay what you wish' é só pra moradores de NY, NJ e CT."],
-        ["Entrada", "A entrada pela 81st (rotunda do Planetário) costuma ter menos fila que a escadaria principal."]
+        ["Hora grátis", "Sites de viagem dizem que a entrada é grátis das 16h30 às 17h30, reservando o horário das 16h30 online (esgota rápido). Não deu pra confirmar no site oficial: confiram em amnh.org. Se não houver vaga, o ingresso normal custa cerca de US$ 37."],
+        ["Priorize", "Com 1 hora, vão direto aos dinossauros (4º andar) e à baleia azul (1º andar)."],
+        ["Entrada", "A entrada pela 81st (rotunda do Planetário) costuma ter menos fila que a escadaria principal."],
+        ["Fecha", "O museu fecha às 17h30."]
       ],
       around: [
         ["Columbus Avenue", "Almoço, a 1 quadra."],
@@ -413,67 +419,137 @@ window.TRIP = {
         ["Broadway com a Prince", "As lojas."]
       ],
       tips: [["Lojas de departamento", "Antes de outlets, olhem Ross, Marshalls e TJ Maxx: costumam ser mais baratas."], ["Imposto", "Somem cerca de 8,9% ao preço da etiqueta."]],
-      around: [["Estação Broadway–Lafayette", "Volta ao hotel (B D F M)."]] }
+      around: [["Estação Broadway–Lafayette", "Volta ao hotel (B D F M)."]] },
+
+    amdream: { name: "American Dream · Apple e Meta Lab", addr: "1 American Dream Way, East Rutherford, NJ", lat: 40.8090, lon: -74.0700, img: "amdream",
+      summary: "O shopping gigante de New Jersey. Apple American Dream (retirada das compras já pagas) e Meta Lab (Ray-Ban Meta) ficam no mesmo shopping. Dia de chuva: tudo coberto.",
+      see: [
+        ["Apple American Dream", "2º andar (Court D). Tem área de retirada de pedidos online: levem o e-mail da compra e documento."],
+        ["Meta Lab American Dream", "Loja da Meta com Ray-Ban Meta, Oakley Meta e Meta Ray-Ban Display pra experimentar. Funciona das 11h às 22h na sexta (confirmar)."],
+        ["Por dentro", "Pista de esqui coberta, Nickelodeon Universe e praça de alimentação, se sobrar tempo."]
+      ],
+      tips: [
+        ["Retirada", "Levem o passaporte e o e-mail de confirmação da Apple; a retirada costuma ser rápida."],
+        ["Cartão físico", "Se for comprar algo no Meta Lab, levem o cartão físico da conta global. O preço não inclui o imposto (em NJ, roupas e calçados são isentos; eletrônicos pagam)."],
+        ["Volta", "O ônibus direto 355 só volta às 19h e 21h30 em dia de semana. Se a rota que vocês acharam no Maps falhar, Uber é o plano B."]
+      ],
+      around: [["Praça de alimentação", "Almoço por ali mesmo."]] },
+
+    broadway: { name: "Broadway (se ganharem a loteria)", addr: "Theater District, W 41st–54th", lat: 40.7590, lon: -73.9860, img: "timessq",
+      summary: "Noite reservada pra um musical, caso vocês ganhem alguma loteria. Se não ganharem, a noite fica livre (ou TKTS na escadaria vermelha).",
+      see: [["Loterias", "Broadway Direct, Telecharge, Lucky Seat e TodayTix (app). Inscrição grátis, geralmente no dia anterior ou na manhã do show."]],
+      tips: [
+        ["Inscrevam os dois", "Cada um se inscreve pedindo 2 ingressos: dobra a chance. A quantidade não muda depois."],
+        ["Prazo pra pagar", "No Broadway Direct, 1 hora depois do e-mail. Deixem o celular com notificação ligada à tarde."],
+        ["Plano B", "TKTS embaixo da escadaria vermelha da Times Square, até 50% no mesmo dia. TodayTix Rush às 9h no app."]
+      ],
+      around: [["Times Square", "Do lado dos teatros."]] },
+
+    harriet: { name: "Harriet's Rooftop", addr: "1 Hotel Brooklyn Bridge, 60 Furman St, 11º andar", lat: 40.7022, lon: -73.9967, img: "harriet",
+      summary: "O bar no terraço do hotel 1 Hotel, de frente pra Brooklyn Bridge e o skyline. Abre ao meio-dia no fim de semana (confirmar). Pago, um drinque com a melhor vista do bairro.",
+      see: [["A vista", "Brooklyn Bridge inteira de frente, com Lower Manhattan atrás."]],
+      tips: [["Clima", "Funciona só com tempo bom; tem um lounge coberto um andar abaixo."], ["Grátis ao lado", "O terraço do Time Out Market (5º andar do Empire Stores) é grátis e tem vista parecida."]],
+      around: [["Brooklyn Bridge Park", "Na saída do hotel."]] },
+
+    traderjoes: { name: "Trader Joe's (Chelsea)", addr: "675 6th Ave, entre a W 21st e a W 22nd", lat: 40.7414, lon: -73.9937, img: "traderjoes",
+      summary: "O mercado das sacolinhas famosas. Essa loja fica a 3 min do Eataly e do Flatiron.",
+      see: [
+        ["As sacolas", "As mini tote bags coloridas são as famosas; esgotam rápido, e a reposição é incerta."],
+        ["Lembrancinhas", "Temperos (Everything But The Bagel), chocolates e snacks baratos."]
+      ],
+      tips: [["Menos movimento", "Dia de semana no começo da tarde. O fim de tarde lota."]],
+      around: [["Eataly", "3 min a pé."], ["Flatiron Building", "5 min a pé."]] }
   },
 
   /* ---------- DIAS ---------- */
+  flights: [
+    { dir: "Ida", from: "Porto Alegre (POA)", to: "Nova York (JFK)", dep: "15/10 · 18:45", arr: "16/10 · 07:05", note: "Com escala" },
+    { dir: "Volta", from: "Nova York (JFK)", to: "Porto Alegre (POA)", dep: "23/10 · 20:40", arr: "24/10 · 10:35", note: "Com escala · cheguem ao JFK até 17h40" }
+  ],
+  weather: { "2026-10-16": "Chuva o dia todo, trovoada à noite · até 23 °C", "2026-10-17": "Sol, frio · 11 °C, mínima 4 °C", "2026-10-18": "Sol · 15 °C", "2026-10-19": "Sol · 18 °C", "2026-10-20": "Sol · 19 °C" },
   days: [
-    { n: 1, date: "2026-10-16", title: "Chegada e Quinta Avenida", stops: [
+    { n: 1, date: "2026-10-16", title: "Chegada e American Dream", stops: [
       { t: "07:05", p: "jfk", note: "Desembarque e imigração", leg: { mode: "transfer", text: "Traslado contratado até o hotel" } },
-      { t: "11:00", p: "hotel", note: "Malas na recepção; check-in às 16h" },
-      { t: "12:30", p: "bryant", leg: { mode: "walk", text: "2 quarteirões a pé" } },
-      { t: "14:30", p: "metalab", note: "Demo às 15h", leg: { mode: "walk", text: "17 quarteirões a pé, subindo a 5ª Av" } },
-      { t: "16:00", p: "apple", leg: { mode: "walk", text: "4 quarteirões a pé" } },
-      { t: "17:30", p: "hotel", note: "Check-in", leg: { mode: "walk", text: "20 quarteirões a pé, descendo a 5ª Av" } },
-      { t: "Noite", p: "timessq", note: "Jantar sugerido: Olive Garden", leg: { mode: "walk", text: "7 min a pé" } }
+      { t: "10:00", p: "hotel", note: "Malas na portaria; check-in às 16h" },
+      { t: "11:30", p: "amdream", note: "Retirada na Apple + Meta Lab + almoço", leave: "10:30", leg: { mode: "bus", text: "Ônibus pela rota que vocês acharam no Maps (~1h) · plano B: Uber" } },
+      { t: "16:30", p: "hotel", note: "Check-in e descanso", leave: "15:30", leg: { mode: "bus", text: "Ônibus de volta (~1h) · o 355 direto só volta às 19h" } },
+      { t: "19:00", p: "timessq", note: "Jantar sugerido: Olive Garden · noite de chuva", leg: { mode: "walk", text: "7 min a pé" } }
+    ], extras: [
+      ["Whitney Museum", "Sextas 17h–22h com entrada gratuita ou 'pague quanto quiser', segundo sites de viagem (confirmar em whitney.org). Fica no Meatpacking: só se a energia e a chuva deixarem."],
+      ["Dormir cedo", "Vocês chegam de voo noturno; amanhã começa às 8h."]
     ] },
-    { n: 2, date: "2026-10-17", title: "Downtown", stops: [
+    { n: 2, date: "2026-10-17", title: "Downtown", broadway: true, stops: [
       { t: "08:30", p: "bull", leg: { mode: "subway", sub: "d2a" } },
-      { t: "10:00", p: "ferry", note: "Ida e volta", leg: { mode: "walk", text: "3 min a pé" } },
+      { t: "10:00", p: "ferry", note: "Ida e volta · sol e vento", leg: { mode: "walk", text: "3 min a pé" } },
       { t: "13:00", p: "stonest", note: "Almoço · Oktoberfest aos sábados", leg: { mode: "walk", text: "5 min a pé" } },
       { t: "14:00", p: "m911", note: "Horário marcado", leg: { mode: "walk", text: "15 min a pé pela Broadway" } },
       { t: "16:30", p: "oculus", leg: { mode: "walk", text: "3 min a pé" } },
-      { t: "Volta", p: "hotel", leg: { mode: "subway", sub: "d2b" } }
+      { t: "Volta", p: "hotel", leg: { mode: "subway", sub: "d2b" } },
+      { t: "20:00", p: "broadway", note: "Se ganharem a loteria", leg: { mode: "walk", text: "5 a 15 min a pé" } }
+    ], extras: [
+      ["Pôr do sol em Hoboken (do teu salvo)", "O trem PATH sai de dentro do Oculus pra Hoboken (NJ) em ~15 min. Vista de Manhattan do outro lado do rio, terra do Frank Sinatra. Pôr do sol por volta de 18h10."],
+      ["Brookfield Place", "Do lado do Oculus, com praça de alimentação de frente pro rio."]
     ] },
-    { n: 3, date: "2026-10-18", title: "Brooklyn", stops: [
-      { t: "08:30", p: "dumbo", leg: { mode: "subway", sub: "d3a" } },
-      { t: "09:45", p: "bbpark", leg: { mode: "walk", text: "6 min a pé" } },
+    { n: 3, date: "2026-10-18", title: "Brooklyn", broadway: true, stops: [
+      { t: "08:15", p: "bbridge", note: "Cedo, antes da multidão", leg: { mode: "subway", sub: "d3a" } },
+      { t: "09:15", p: "dumbo", note: "A foto da Washington St", leg: { mode: "walk", text: "5 min a pé da saída da ponte" } },
+      { t: "10:00", p: "bbpark", leg: { mode: "walk", text: "6 min a pé" } },
       { t: "11:00", p: "promenade", leg: { mode: "walk", text: "15 min a pé pela Squibb Park Bridge" } },
-      { t: "12:30", p: "timeout", note: "Almoço", leg: { mode: "walk", text: "15 min a pé" } },
-      { t: "14:30", p: "bbridge", note: "Uns 40 min", leg: { mode: "walk", text: "15 min a pé até a Cadman Plaza" } },
-      { t: "Volta", p: "hotel", leg: { mode: "subway", sub: "d3b" } }
+      { t: "12:30", p: "timeout", note: "Almoço + rooftop grátis", leg: { mode: "walk", text: "15 min a pé" } },
+      { t: "14:00", p: "harriet", note: "Opcional · drinque com vista", leg: { mode: "walk", text: "8 min a pé" } },
+      { t: "Volta", p: "hotel", leg: { mode: "subway", sub: "d3b" } },
+      { t: "19:00", p: "broadway", note: "Se ganharem a loteria (domingo tem poucas sessões à noite)", leg: { mode: "walk", text: "5 a 15 min a pé" } }
+    ], extras: [
+      ["Jane's Carousel", "Carrossel de 1922 numa caixa de vidro, no parque."],
+      ["Ruas de Brooklyn Heights", "Willow St e Columbia Heights: casas do século XIX."]
     ] },
-    { n: 4, date: "2026-10-19", title: "Museu e Central Park", stops: [
-      { t: "10:00", p: "amnh", leg: { mode: "subway", sub: "d4a" } },
-      { t: "13:30", p: "columbus", note: "Almoço + decoração de Halloween", leg: { mode: "walk", text: "2 min a pé" } },
-      { t: "14:30", p: "cpbike", note: "Strawberry Fields, Bow Bridge, Bethesda, The Mall", leg: { mode: "walk", text: "10 min a pé até a 72nd" } },
+    { n: 4, date: "2026-10-19", title: "Central Park e Museu", stops: [
+      { t: "10:00", p: "cpbike", note: "De manhã: sol e menos gente", leg: { mode: "subway", sub: "d4a" } },
+      { t: "12:30", p: "columbus", note: "Almoço + decoração de Halloween", leg: { mode: "walk", text: "10 min a pé" } },
+      { t: "16:00", p: "amnh", note: "Chegar 16h · hora grátis 16h30–17h30", leg: { mode: "walk", text: "5 min a pé" } },
       { t: "Volta", p: "hotel", leg: { mode: "subway", sub: "d4b" } }
+    ], extras: [
+      ["The Met", "Do outro lado do parque, na 5ª Av com a 82nd. Cerca de US$ 30; abre às segundas. Dá pra fazer de manhã, antes da bike."],
+      ["Belvedere Castle", "Castelinho no meio do parque, com vista do Turtle Pond."],
+      ["Onde estão as cores", "centralparknyc.org, na seção Fall Foliage Tracker, mostra onde as árvores estão mais coloridas (dica de um salvo teu)."]
     ] },
     { n: 5, date: "2026-10-20", title: "West Side e Nebula", stops: [
       { t: "09:30", p: "littleisland", leg: { mode: "subway", sub: "d5a" } },
       { t: "10:30", p: "pier57", leg: { mode: "walk", text: "2 min a pé" } },
-      { t: "11:30", p: "chelsea", leg: { mode: "walk", text: "2 quarteirões a pé" } },
+      { t: "11:30", p: "chelsea", note: "Dia de semana de manhã: mais tranquilo", leg: { mode: "walk", text: "5 min a pé" } },
       { t: "13:30", p: "highline", note: "Sentido norte, uma 1h", leg: { mode: "walk", text: "Entrada da 16th, do outro lado da rua" } },
       { t: "16:00", p: "vessel", note: "Horário marcado", leg: { mode: "walk", text: "Fim do High Line" } },
       { t: "17:40", p: "hudsonpark", note: "Pôr do sol 18:07", leg: { mode: "walk", text: "5 min a pé" } },
       { t: "19:00", p: "hotel", note: "Jantar e cochilo", leg: { mode: "subway", sub: "d5b" } },
       { t: "23:10", p: "nebula", note: "Até as 4h", leg: { mode: "walk", text: "5 min a pé" } }
+    ], extras: [
+      ["Whitney Museum", "Do lado da entrada sul do High Line (Gansevoort St). Cerca de US$ 30."],
+      ["Edge (Hudson Yards)", "Mirante com chão de vidro, pago, ao lado do Vessel."]
     ] },
     { n: 6, date: "2026-10-21", title: "Midtown Leste e o jogo", stops: [
       { t: "10:00", p: "mcny", note: "Grátis às quartas", leg: { mode: "subway", sub: "d6a" } },
       { t: "12:30", p: "grandcentral", note: "Almoço no mercado de baixo", leg: { mode: "subway", sub: "d6b" } },
-      { t: "14:15", p: "tram", leg: { mode: "subway", sub: "d6c" } },
-      { t: "15:30", p: "stpatrick", note: "Descendo a 5ª Av da 59th à 49th", leg: { mode: "walk", text: "15 min a pé até a 5ª Av" } },
-      { t: "18:00", p: "barclays", note: "Portões 18h · jogo 19h30", leg: { mode: "subway", sub: "d6d" } },
+      { t: "13:30", p: "bryant", note: "Com a Biblioteca Pública", leg: { mode: "walk", text: "7 min a pé pela 42nd" } },
+      { t: "14:45", p: "tram", leg: { mode: "subway", sub: "d6c" } },
+      { t: "16:00", p: "stpatrick", note: "Descendo a 5ª Av da 59th à 49th", leg: { mode: "walk", text: "15 min a pé até a 5ª Av" } },
+      { t: "18:00", p: "barclays", note: "A decidir · portões 18h · jogo 19h30", leg: { mode: "subway", sub: "d6d" } },
       { t: "Volta", p: "hotel", leg: { mode: "subway", sub: "d6e" } }
+    ], extras: [
+      ["Se não forem ao jogo", "Noite livre pra Broadway (loteria) ou Times Square."],
+      ["Chrysler Building", "O saguão art déco, na Lexington com a 42nd, ao lado da Grand Central."],
+      ["Summit One Vanderbilt", "Mirante de espelhos colado na Grand Central (pago)."]
     ] },
-    { n: 7, date: "2026-10-22", title: "Flatiron, bairros e mirante", stops: [
+    { n: 7, date: "2026-10-22", title: "Flatiron, bairros e mirante", broadway: true, stops: [
       { t: "10:00", p: "hp", note: "A decidir", leg: { mode: "subway", sub: "d7a" } },
       { t: "11:30", p: "flatiron", leg: { mode: "walk", text: "1 quarteirão" } },
       { t: "13:00", p: "eataly", note: "Almoço", leg: { mode: "walk", text: "Do outro lado da rua" } },
-      { t: "14:00", p: "friends", note: "A decidir", alt: "unionsq", leg: { mode: "walk", text: "8 min a pé" } },
+      { t: "14:00", p: "traderjoes", note: "As sacolinhas", leg: { mode: "walk", text: "5 min a pé pela 22nd" } },
+      { t: "14:45", p: "friends", note: "A decidir", alt: "unionsq", leg: { mode: "walk", text: "12 min a pé" } },
       { t: "17:15", p: "rock", note: "A decidir · pôr do sol 18:05", leg: { mode: "subway", sub: "d7b" } },
-      { t: "Volta", p: "hotel", leg: { mode: "walk", text: "11 quarteirões a pé" } }
+      { t: "20:00", p: "broadway", note: "Se ganharem a loteria", leg: { mode: "walk", text: "5 a 10 min a pé" } }
+    ], extras: [
+      ["Strand Bookstore", "Livraria gigante de usados, na Broadway com a 12th."],
+      ["Shake Shack original", "Dentro do Madison Square Park."]
     ] },
     { n: 8, date: "2026-10-23", title: "Village, SoHo e volta", stops: [
       { t: "10:00", p: "hotel", note: "Check-out; malas ficam na recepção" },
@@ -483,6 +559,8 @@ window.TRIP = {
       { t: "13:30", p: "soho", leg: { mode: "walk", text: "15 min a pé" } },
       { t: "15:45", p: "hotel", note: "Pegar as malas", leg: { mode: "subway", sub: "d8b" } },
       { t: "16:30", p: "jfk", note: "Voo 20:40 · saiam no máximo 16h30", leg: { mode: "subway", sub: "d8c" } }
+    ], extras: [
+      ["MoMA Design Store (do teu salvo)", "Loja de design do MoMA no SoHo, 81 Spring St."]
     ] }
   ],
 
@@ -498,26 +576,26 @@ window.TRIP = {
       stops: ["City Hall", "Canal St", "Prince St", "8 St–NYU", "14 St–Union Sq", "23 St", "28 St", "34 St–Herald Sq"],
       exit: "34 St–Herald Sq: saiam pela Broadway com a 35th; o hotel fica a 5 min (pela 6ª Av até a 38th).",
       mins: 20, from_ll: [40.7108, -74.0120], to_ll: [40.7497, -73.9878] },
-    d3a: { title: "Do hotel até Dumbo", lines: ["F"], dir: "Downtown & Brooklyn", sign: "F · Coney Island–Stillwell Av",
-      from: "42 St–Bryant Park", walkIn: "4 min a pé. Entrada na 6ª Av com a 40th ou a 42nd, ao lado do parque. Procurem a bolinha laranja F.",
-      stops: ["34 St–Herald Sq", "23 St", "14 St", "W 4 St–Wash Sq", "Broadway–Lafayette", "2 Av", "Delancey St–Essex St", "East Broadway", "York St"],
-      exit: "York St: sigam a placa Jay St & York St. Dumbo fica a 5 min, descendo a Jay St em direção ao rio.",
-      mins: 25, from_ll: [40.7543, -73.9840], to_ll: [40.7014, -73.9866] },
-    d3b: { title: "Da Brooklyn Bridge até o hotel", lines: ["R"], dir: "Uptown & Queens", sign: "R · Forest Hills–71 Av",
-      from: "City Hall", walkIn: "Ao sair da ponte em Manhattan, atravessem o City Hall Park até a Broadway com a Murray St (3 min).",
-      stops: ["Canal St", "Prince St", "8 St–NYU", "14 St–Union Sq", "23 St", "28 St", "34 St–Herald Sq"],
-      exit: "34 St–Herald Sq: saiam pela Broadway com a 35th; o hotel fica a 5 min.",
-      mins: 18, from_ll: [40.7133, -74.0072], to_ll: [40.7497, -73.9878] },
-    d4a: { title: "Do hotel até o Museu de História Natural", lines: ["B"], dir: "Uptown & The Bronx", sign: "B · Bedford Park Blvd",
-      from: "42 St–Bryant Park", walkIn: "4 min a pé, entrada na 6ª Av com a 42nd. Procurem a bolinha laranja B.",
-      stops: ["47–50 Sts–Rockefeller Ctr", "7 Av", "59 St–Columbus Circle", "72 St", "81 St–Museum of Natural History"],
-      exit: "81 St: tem uma saída direto pra dentro do museu, no nível do metrô.",
-      mins: 15, note: "Peguem o B, não o D: o D é expresso e não para na 81 St.", from_ll: [40.7543, -73.9840], to_ll: [40.7815, -73.9722] },
-    d4b: { title: "Do Central Park até o hotel", lines: ["B", "D"], dir: "Downtown & Brooklyn", sign: "B ou D",
-      from: "59 St–Columbus Circle", walkIn: "Saída sul do parque, no Columbus Circle. Entrada na esquina do parque com a 8ª Av.",
-      stops: ["7 Av", "47–50 Sts–Rockefeller Ctr", "42 St–Bryant Park"],
+    d3a: { title: "Do hotel até a Brooklyn Bridge", lines: ["R"], dir: "Downtown & Brooklyn", sign: "R · Bay Ridge–95 St",
+      from: "34 St–Herald Sq", walkIn: "5 min a pé. Entrada na Broadway com a 35th; sigam as placas amarelas N Q R W.",
+      stops: ["28 St", "23 St", "14 St–Union Sq", "8 St–NYU", "Prince St", "Canal St", "City Hall"],
+      exit: "City Hall: saiam no City Hall Park. A entrada de pedestres da ponte fica na Park Row, em frente à prefeitura (3 min).",
+      mins: 18, note: "Domingo: o W não roda. Peguem o R.", from_ll: [40.7497, -73.9878], to_ll: [40.7133, -74.0072] },
+    d3b: { title: "De Dumbo até o hotel", lines: ["F"], dir: "Manhattan", sign: "F · Jamaica–179 St",
+      from: "York St", walkIn: "Do Time Out Market ou do Harriet's, uns 8 min a pé até a Jay St com a York St.",
+      stops: ["East Broadway", "Delancey St–Essex St", "2 Av", "Broadway–Lafayette", "W 4 St–Wash Sq", "14 St", "23 St", "34 St–Herald Sq", "42 St–Bryant Park"],
       exit: "42 St–Bryant Park: saiam pela 6ª Av com a 40th; o hotel fica a 4 min.",
-      mins: 10, from_ll: [40.7681, -73.9819], to_ll: [40.7543, -73.9840] },
+      mins: 25, from_ll: [40.7014, -73.9866], to_ll: [40.7543, -73.9840] },
+    d4a: { title: "Do hotel até o Central Park (aluguel de bike)", lines: ["B"], dir: "Uptown & The Bronx", sign: "B · Bedford Park Blvd",
+      from: "42 St–Bryant Park", walkIn: "4 min a pé, entrada na 6ª Av com a 42nd. Procurem a bolinha laranja B.",
+      stops: ["47–50 Sts–Rockefeller Ctr", "7 Av", "59 St–Columbus Circle", "72 St"],
+      exit: "72 St: saiam na Central Park West com a 72nd; o parque e o aluguel de bike ficam do outro lado da rua.",
+      mins: 12, note: "Peguem o B, não o D: o D é expresso e não para na 72 St.", from_ll: [40.7543, -73.9840], to_ll: [40.7760, -73.9762] },
+    d4b: { title: "Do museu até o hotel", lines: ["B"], dir: "Downtown & Brooklyn", sign: "B · Brighton Beach",
+      from: "81 St–Museum of Natural History", walkIn: "A estação tem uma saída direto de dentro do museu, no nível do metrô.",
+      stops: ["72 St", "59 St–Columbus Circle", "7 Av", "47–50 Sts–Rockefeller Ctr", "42 St–Bryant Park"],
+      exit: "42 St–Bryant Park: saiam pela 6ª Av com a 40th; o hotel fica a 4 min.",
+      mins: 15, note: "O C também passa ali, mas vai pela 8ª Av; fiquem com o B.", from_ll: [40.7815, -73.9722], to_ll: [40.7543, -73.9840] },
     d5a: { title: "Do hotel até a Little Island", lines: ["F", "M"], dir: "Downtown & Brooklyn", sign: "F ou M",
       from: "42 St–Bryant Park", walkIn: "4 min a pé, entrada na 6ª Av com a 40th.",
       stops: ["34 St–Herald Sq", "23 St", "14 St"],
@@ -538,8 +616,8 @@ window.TRIP = {
       stops: ["96 St", "86 St", "77 St", "68 St–Hunter College", "59 St", "51 St", "Grand Central–42 St"],
       exit: "Grand Central: sigam as placas Main Concourse; a praça de alimentação fica um andar abaixo.",
       mins: 20, from_ll: [40.7906, -73.9476], to_ll: [40.7527, -73.9772] },
-    d6c: { title: "Da Grand Central até o bondinho", lines: ["6"], dir: "Uptown & The Bronx", sign: "6 · Pelham Bay Park",
-      from: "Grand Central–42 St", walkIn: "Dentro da estação, placas verdes 4 5 6.",
+    d6c: { title: "Do Bryant Park até o bondinho", lines: ["6"], dir: "Uptown & The Bronx", sign: "6 · Pelham Bay Park",
+      from: "Grand Central–42 St", walkIn: "7 min a pé pela 42nd até a Grand Central. Lá dentro, placas verdes 4 5 6.",
       stops: ["51 St", "59 St"],
       exit: "59 St: saiam na Lexington com a 60th e andem 3 quarteirões pra leste até a 2ª Av. O bondinho sai da E 59th com a 2ª Av.",
       mins: 6, from_ll: [40.7527, -73.9772], to_ll: [40.7626, -73.9676] },
@@ -582,16 +660,17 @@ window.TRIP = {
 
   /* ---------- INGRESSOS ---------- */
   tickets: [
-    { id: "metalab", name: "Meta Lab · demo", when: "Sex 16 · 15:00", place: "metalab", status: "comprado" },
+    { id: "apple", name: "Apple American Dream · retirada", when: "Sex 16 · ~12:00", place: "amdream", status: "comprado", price: "Já pago, só retirar" },
+    { id: "bway", name: "Broadway · loteria diária", when: "Inscrição todo dia", place: "broadway", status: "decidir", price: "Grátis pra entrar, ~US$ 35–60 se ganhar", url: "https://lottery.broadwaydirect.com/", site: "broadwaydirect.com" },
     { id: "m911", name: "9/11 Memorial Museum", when: "Sáb 17 · 14:00", place: "m911", status: "comprado", url: "https://www.911memorial.org/visit", site: "911memorial.org" },
     { id: "vessel", name: "Vessel", when: "Ter 20 · 16:00", place: "vessel", status: "comprado", url: "https://www.hudsonyardsnewyork.com/discover/vessel", site: "hudsonyardsnewyork.com" },
     { id: "nebula", name: "Nebula", when: "Ter 20 · 23:10", place: "nebula", status: "comprado" },
-    { id: "amnh", name: "Museu de História Natural", when: "Seg 19 · 10:00", place: "amnh", status: "comprar", price: "US$ 37", url: "https://www.amnh.org/plan-your-visit", site: "amnh.org" },
+    { id: "amnh", name: "Museu de História Natural · hora grátis", when: "Seg 19 · 16:30", place: "amnh", status: "comprar", price: "Reservar o horário das 16h30 (grátis, esgota)", url: "https://www.amnh.org/plan-your-visit", site: "amnh.org" },
     { id: "mcny", name: "Museum of the City of NY", when: "Qua 21 · 10:00", place: "mcny", status: "comprar", price: "Grátis às quartas", url: "https://www.mcny.org/visit", site: "mcny.org" },
-    { id: "bike", name: "Bike no Central Park", when: "Seg 19 · 14:30", place: "cpbike", status: "local", price: "US$ 22 por pessoa" },
+    { id: "bike", name: "Bike no Central Park", when: "Seg 19 · 10:00", place: "cpbike", status: "local", price: "US$ 22 por pessoa" },
     { id: "nets", name: "Nets x Hornets", when: "Qua 21 · 19:30", place: "barclays", status: "decidir", url: "https://www.nba.com/nets/tickets", site: "nba.com/nets" },
     { id: "hp", name: "Harry Potter New York", when: "Qui 22 · 10:00", place: "hp", status: "decidir", price: "Loja grátis; experiências pagas", url: "https://harrypotterstore.com/new-york", site: "harrypotterstore.com" },
-    { id: "friends", name: "Friends Experience", when: "Qui 22 · 14:00", place: "friends", status: "decidir", price: "US$ 52", url: "https://www.friendstheexperience.com/", site: "friendstheexperience.com" },
+    { id: "friends", name: "Friends Experience", when: "Qui 22 · 14:45", place: "friends", status: "decidir", price: "US$ 52", url: "https://www.friendstheexperience.com/", site: "friendstheexperience.com" },
     { id: "rock", name: "Top of the Rock", when: "Qui 22 · 17:15", place: "rock", status: "decidir", url: "https://www.rockefellercenter.com/attractions/top-of-the-rock-observation-deck/", site: "rockefellercenter.com" }
   ],
 
@@ -620,7 +699,17 @@ window.TRIP = {
       ["Dipirona", "Dipirona (Novalgina) não é aprovada nos EUA. Levem só o necessário, na embalagem original e com receita. Pra dor, comprem paracetamol (Tylenol) ou ibuprofeno (Advil) em qualquer farmácia."],
       ["Golpes", "Ninguém vende ingresso de verdade na rua. Ignorem quem abordar no Battery Park ou na Times Square."]
     ] },
+    { group: "Broadway", items: [
+      ["Loteria todo dia", "Todo dia de manhã, inscrevam os dois nas loterias dos shows que querem: Broadway Direct (sem conta), Telecharge (conta grátis), Lucky Seat e o app TodayTix. A maioria abre no dia anterior ou na manhã do show."],
+      ["Noites reservadas", "Sábado 17, domingo 18 e quinta 22 (e quarta 21, se desistirem do jogo)."],
+      ["Ganharam?", "Pagamento em até 1 hora no Broadway Direct. Deixem as notificações ligadas."],
+      ["Plano B", "TKTS na escadaria vermelha da Times Square (mesmo dia, até 50%) e TodayTix Rush às 9h."]
+    ] },
+    { group: "Banheiro na rua", items: [
+      ["Onde ir", "Parques (Bryant Park, Central Park, Madison Square Park), Starbucks, lojas de departamento (Macy's, Target), bibliotecas e estações grandes (Grand Central, Oculus). Dica de um salvo teu."]
+    ] },
     { group: "Clima", items: [
+      ["Previsão (13/10)", "Chuva só na sexta 16; sábado a terça, sol. Sábado é o dia mais frio (máx. 11 °C, mín. 4 °C). Quarta a sexta ainda sem previsão."],
       ["Outubro", "Entre 10 °C e 18 °C. Camadas leves de dia, casaco mais quente à noite e tênis confortável: vocês vão andar muito."]
     ] }
   ]

@@ -36,7 +36,12 @@
     food: '<path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M17 3c-2 2-2 7 0 9v9"/>',
     heart: '<path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20z"/>',
     sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/>',
-    share: '<path d="M12 15V3M8 7l4-4 4 4M5 12v8h14v-8"/>'
+    share: '<path d="M12 15V3M8 7l4-4 4 4M5 12v8h14v-8"/>',
+    bus: '<rect x="4.5" y="3" width="15" height="15" rx="3"/><path d="M4.5 11h15M8 21v-3M16 21v-3"/><circle cx="8.5" cy="14.5" r=".7"/><circle cx="15.5" cy="14.5" r=".7"/>',
+    clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    plane: '<path d="M10.5 21l1.5-6 6-2.5c1.6-.7 1.6-2.3 0-3L12 7 10.5 3H9l.7 4.5L5 9.3 3 7.5H2l1 4-1 4h1l2-1.8 4.7 1.8L9 21z"/>',
+    cloud: '<path d="M7 18h10a4 4 0 0 0 .5-8A6 6 0 0 0 6 9.5 4.3 4.3 0 0 0 7 18z"/>',
+    star: '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>'
   };
   const store = {
     get(k, d) { try { const v = localStorage.getItem("ny26:" + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
@@ -55,6 +60,14 @@
   const dObj = s => { const [y, m, d] = s.split("-").map(Number); return new Date(Date.UTC(y, m - 1, d)); };
   const dateLong = s => { const d = dObj(s); return `${DOW[d.getUTCDay()]}, ${d.getUTCDate()} de ${MON[d.getUTCMonth()]}`; };
   const toMin = t => /^\d\d:\d\d$/.test(t) ? (+t.slice(0, 2)) * 60 + +t.slice(3) : null;
+  const hhmm = m0 => { const m = Math.floor(m0 / 5) * 5; return `${String(Math.floor(((m % 1440) + 1440) % 1440 / 60)).padStart(2, "0")}:${String(((m % 60) + 60) % 60).padStart(2, "0")}`; };
+  function leaveAt(s) {
+    if (s.leave) return s.leave;
+    const t = toMin(s.t), L = s.leg; if (t == null || !L) return null;
+    if (L.mode === "subway") { const r = T.subway[L.sub]; const w = +((r.walkIn.match(/(\d+) min/) || [])[1] || 8); return hhmm(t - r.mins - w - 5); }
+    if (L.mode === "walk") { const m = L.text.match(/(\d+) min/); const q = L.text.match(/(\d+) quarteir/); const n = m ? +m[1] : q ? Math.round(+q[1] * 1.3) : null; return n && n >= 4 ? hhmm(t - n - 2) : null; }
+    return null;
+  }
   const todayIdx = () => T.days.findIndex(d => d.date === nyNow().date);
 
   /* current / next stop for a day */
@@ -80,6 +93,7 @@
   function legLine(s) {
     const L = s.leg; if (!L) return "";
     if (L.mode === "subway") { const sb = T.subway[L.sub]; return `${sb.lines.map(l => bullet(l)).join(" ")} ${esc(sb.from)} → ${esc(sb.stops[sb.stops.length - 1].replace(/ \(.*\)/, ""))}`; }
+    if (L.mode === "bus") return `${I("bus").replace('class="ico"', 'class="ico" style="width:16px;height:16px;vertical-align:-3px"')} ${esc(L.text)}`;
     return esc(L.text);
   }
 
@@ -105,23 +119,33 @@
         <div class="th" ${bg(p.img)}>${p.img ? "" : I(s.p === "hotel" ? "door" : "pin")}</div>
         <div class="tx"><div class="n">${esc(p.name)}</div>
         <div class="s"><span class="tm">${esc(s.t)}</span>${s.leg ? " · " : ""}${legLine(s)}</div>
+        ${leaveAt(s) ? `<div class="leave">${I("clock")}Saia às ${leaveAt(s)}</div>` : ""}
         ${s.note ? `<div class="note">${esc(s.note)}</div>` : ""}</div>${I("chev").replace('class="ico"', 'class="ico chev"')}</a>`;
     }).join("");
     return `<div class="screen">
       <header class="head"><small>${dateLong(day.date)} · Dia ${day.n} de ${T.days.length}</small><h1>${esc(day.title)}</h1>
-      ${daysTo > 0 ? `<div class="count">${I("sun")}Faltam ${daysTo} ${daysTo === 1 ? "dia" : "dias"} pra viagem</div>` : ""}</header>
+      ${daysTo > 0 ? `<div class="count">${I("sun")}Faltam ${daysTo} ${daysTo === 1 ? "dia" : "dias"} pra viagem</div>` : ""}
+      ${T.weather && T.weather[day.date] ? `<div class="wx">${I(/chuva/i.test(T.weather[day.date]) ? "cloud" : "sun")}${esc(T.weather[day.date])}</div>` : ""}</header>
       <nav class="seg" aria-label="Dias da viagem">${seg}</nav>
       <a class="feat" href="#/lugar/${fs.p}/${day.n}/${fi}">
         <div class="img" ${bg(fp.img)}><span class="pill">${label} · ${esc(fs.t)}</span></div>
         <div class="n">${esc(fp.name)}</div>
-        <div class="s">${esc(fs.note || fp.addr)}</div>
+        <div class="s">${esc(fs.note || fp.addr)}${leaveAt(fs) ? ` · saia às ${leaveAt(fs)}` : ""}</div>
       </a>
       <div class="actions">
         <a class="btn pri" href="${dayMap(day)}" target="_blank" rel="noopener">${I("map")}Mapa do dia</a>
         <a class="btn" href="${appleTo(fp, fs.leg && fs.leg.mode === "walk" ? "walk" : "transit")}" target="_blank" rel="noopener">${I("pin")}Como chegar</a>
       </div>
+      ${day.n === 1 || day.n === T.days.length ? flightCard(day.n === 1 ? 0 : 1) : ""}
+      ${day.broadway ? `<a class="banner" href="#/lugar/broadway">${I("star")}<div><b>Loteria da Broadway</b>Inscrevam os dois hoje de manhã pros shows da noite. Toque pra ver como.</div></a>` : `<div class="banner quiet">${I("star")}<div><b>Loteria da Broadway</b>Lembrem de se inscrever hoje pros shows de amanhã.</div></div>`}
       <div class="list">${rows}</div>
+      ${day.extras && day.extras.length ? `<div class="sect">Se sobrar tempo</div><div class="tipg">${day.extras.map(([t, d]) => `<div class="it"><div class="ic">${I("near")}</div><div><b>${esc(t)}</b><p>${esc(d)}</p></div></div>`).join("")}</div>` : ""}
     </div>${tabbar("roteiro")}`;
+  }
+
+  function flightCard(i) {
+    const f = T.flights && T.flights[i]; if (!f) return "";
+    return `<div class="flight">${I("plane")}<div style="flex:1"><b>Voo de ${f.dir.toLowerCase()} · ${esc(f.note)}</b><span>${esc(f.from)} ${esc(f.dep)} → ${esc(f.to)} ${esc(f.arr)}</span></div></div>`;
   }
 
   /* ---------- PLACE ---------- */
@@ -138,11 +162,11 @@
       const L = s && s.leg;
       if (L && L.mode === "subway") {
         const sb = T.subway[L.sub];
-        pane = `<a class="leg" href="#/rota/${L.sub}"><div class="bs">${sb.lines.map(l => bullet(l, true)).join("")}</div><div style="flex:1"><b>${esc(sb.title)}</b><span>${sb.stops.length} paradas · ~${sb.mins} min · desce em ${esc(sb.stops[sb.stops.length - 1].replace(/ \(.*\)/, ""))}</span></div>${I("chev")}</a>
+        pane = `<a class="leg" href="#/rota/${L.sub}"><div class="bs">${sb.lines.map(l => bullet(l, true)).join("")}</div><div style="flex:1"><b>${esc(sb.title)}</b><span>${leaveAt(s) ? "Saia às " + leaveAt(s) + " · " : ""}${sb.stops.length} paradas · ~${sb.mins} min · desce em ${esc(sb.stops[sb.stops.length - 1].replace(/ \(.*\)/, ""))}</span></div>${I("chev")}</a>
         <div class="stack"><a class="btn pri" href="#/rota/${L.sub}">${I("train")}Ver o passo a passo</a><a class="btn" href="${appleFromTo(sb.from_ll, sb.to_ll, "transit")}" target="_blank" rel="noopener">${I("ext")}Abrir no Apple Maps</a></div>`;
       } else if (L) {
-        pane = `<div class="leg">${I(L.mode === "transfer" ? "car" : "walk")}<div style="flex:1"><b>${esc(L.text)}</b><span>${esc(p.addr)}</span></div></div>
-        <div class="stack"><a class="btn pri" href="${appleTo(p, "walk")}" target="_blank" rel="noopener">${I("ext")}Abrir rota a pé no Apple Maps</a></div>`;
+        pane = `<div class="leg">${I(L.mode === "transfer" ? "car" : L.mode === "bus" ? "bus" : "walk")}<div style="flex:1"><b>${esc(L.text)}</b><span>${leaveAt(s) ? "Saia às " + leaveAt(s) + " · " : ""}${esc(p.addr)}</span></div></div>
+        <div class="stack"><a class="btn pri" href="${appleTo(p, L.mode === "walk" ? "walk" : "transit")}" target="_blank" rel="noopener">${I("ext")}${L.mode === "walk" ? "Abrir rota a pé no Apple Maps" : "Abrir rota no Apple Maps"}</a></div>`;
       } else {
         pane = `<div class="leg">${I("pin")}<div style="flex:1"><b>${esc(p.addr)}</b><span>Ponto de partida do dia</span></div></div>
         <div class="stack"><a class="btn pri" href="${appleTo(p, "transit")}" target="_blank" rel="noopener">${I("ext")}Abrir no Apple Maps</a></div>`;
@@ -188,6 +212,7 @@
         <div class="top"><div style="display:flex;gap:4px">${r.lines.map(l => bullet(l, true)).join("")}</div><div><b>${r.lines.length > 1 ? "Linha " + r.lines.join(" ou ") : "Linha " + r.lines[0]}</b><span>Sentido ${esc(r.dir)}</span></div></div>
         <div class="facts"><div>Paradas<b>${r.stops.length}</b></div><div>Tempo<b>~${r.mins} min</b></div><div>Desce em<b>${esc(lastStop.replace(/ \(.*\)/, "").replace(/–.*/, ""))}</b></div></div>
       </section>
+      ${(() => { const st = owner && owner.stops.find(s => s.leg && s.leg.sub === id); const lv = st && leaveAt(st); return lv && toMin(st.t) != null ? `<div class="when">${I("clock")}<span>Saia às <b>${lv}</b> pra chegar às <b>${esc(st.t)}</b></span></div>` : ""; })()}
       ${r.note ? `<div class="alert">${I("warn")}<span>${esc(r.note)}</span></div>` : ""}
       <ol class="steps" style="--line-c:${c}">
         <li class="step"><div class="k">${I("walk")}</div><div><h3>Vá até a estação ${esc(r.from)}</h3><p>${esc(r.walkIn)}</p></div></li>
@@ -242,10 +267,11 @@
 
   /* ---------- TIPS ---------- */
   function viewTips() {
-    const icon = { "Metrô": "train", "Dinheiro": "money", "Comer": "food", "Saúde e segurança": "heart", "Clima": "sun" };
+    const icon = { "Metrô": "train", "Dinheiro": "money", "Comer": "food", "Saúde e segurança": "heart", "Clima": "sun", "Broadway": "star", "Banheiro na rua": "pin" };
     const standalone = window.matchMedia("(display-mode: standalone)").matches || navigator.standalone;
     return `<div class="screen"><header class="head"><small>Pra ter sempre à mão</small><h1>Dicas</h1></header>
       ${standalone ? "" : `<div class="install">${I("share")}<div><b>Instale na tela de início</b>No Safari, toque em Compartilhar e depois em "Adicionar à Tela de Início". Abra uma vez com internet e o app passa a funcionar offline.</div></div>`}
+      <div class="sect">Voos</div><div class="tipg">${(T.flights || []).map((f, i) => flightCard(i)).join("")}</div>
       ${T.tips.map(g => `<div class="sect">${esc(g.group)}</div><div class="tipg">${g.items.map(([t, d]) => `<div class="it"><div class="ic">${I(icon[g.group] || "tip")}</div><div><b>${esc(t)}</b><p>${esc(d)}</p></div></div>`).join("")}</div>`).join("")}
       <details class="credits"><summary>Créditos das fotos</summary><ul>${Object.entries(C).map(([k, c]) => `<li>${esc(place(Object.keys(T.places).find(id => T.places[id].img === k || (T.places[id].gallery || []).includes(k)))?.name || k)}: ${esc(c.a)}, ${esc(c.l)}${c.u ? `, <a href="${c.u}" target="_blank" rel="noopener">Wikimedia Commons</a>` : ""}</li>`).join("")}</ul></details>
     </div>${tabbar("dicas")}`;
